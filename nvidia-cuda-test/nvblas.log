@@ -1,0 +1,3 @@
+[NVBLAS] Using devices :0 
+[NVBLAS] Config parsed
+[NVBLAS] sgemm[gpu]: ta=N, tb=N, m=8192, n=8192, k=8192
