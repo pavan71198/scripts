@@ -1,7 +1,10 @@
 #!/bin/bash
 curl -k -sS https://agnigarh.iitg.ac.in:1442/logout\? > /dev/null
+form_redir='https://agnigarh.iitg.ac.in:1442/login?'
+form_username='username'
+form_password='password'
 agnigarh_magic_id=$(curl -k -sS "https://agnigarh.iitg.ac.in:1442/login?" | grep -oP 'name="magic".*value="\K[^"]+')
-agnigarh_keepalive_id=$(curl -k -sS -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "4Tredir=https%3A%2F%2Fagnigarh.iitg.ac.in%3A1442%2Flogin%3F&magic=$agnigarh_magic_id&username=pavan71198&password=h4ck3r%402020" https://agnigarh.iitg.ac.in:1442/login\? | grep -oP 'keepalive\?\K[^"]+')
+agnigarh_keepalive_id=$(curl -k -sS -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "4Tredir=$form_redir&magic=$agnigarh_magic_id&username=$form_username&password=$form_password" https://agnigarh.iitg.ac.in:1442/login\? | grep -oP 'keepalive\?\K[^"]+')
 echo $agnigarh_keepalive_id > ~/.agnigarh_login_check
 agnigarh_login_check=$agnigarh_keepalive_id
 while [ "$agnigarh_login_check" == "$agnigarh_keepalive_id" ]
