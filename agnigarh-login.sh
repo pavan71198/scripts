@@ -9,7 +9,7 @@ agnigarh_site='https://agnigarh.iitg.ac.in:1442'
 #logging out
 curl -k -sS "$agnigarh_site/logout?" > /dev/null
 
-#set username and sassword here
+#set username and password here
 form_username='username'
 form_password='password'
 
