@@ -1,4 +1,4 @@
-AAMS Course List and Grades Extraction
+//AAMS Course List and Grades Extraction
 
 for (var i = 0; i < list.length; i++) {
     if (list[i].childNodes.length == 8) {
