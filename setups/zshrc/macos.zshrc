@@ -12,11 +12,15 @@ plugins=(git zsh-syntax-highlighting zsh-completions)
 
 if [[ -z $DESKTOP_SESSION ]]; 
 then
-read -r -p "Font of Terminal set to a Nerd Font? [Y/n]" fontcheck
+
+PROMPT_EOL_MARK=$'\n'
+read -q "?Font of Terminal not set to a Nerd Font? [y/N] " fonterror
+
+else
+
+fonterror=n
+
 fi
-fontcheck=${fontcheck,,}
-if [[ "$response" =~ ^(no|n)$ ]];
-then
 
 ZSH_THEME="robbyrussell"
 
@@ -24,6 +28,7 @@ source $ZSH/oh-my-zsh.sh
 
 else
 
+PROMPT_EOL_MARK=↵
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE=nerdfont-complete
 
