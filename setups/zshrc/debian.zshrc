@@ -16,15 +16,16 @@ if [[ -z $DESKTOP_SESSION ]];
 then
 
 PROMPT_EOL_MARK=$'\n'
-read -q "?Font of Terminal not set to a Nerd Font? [y/N] " fonterror
+echo "No GUI detected."
+read -q "?Are you sure a Nerd Font is enabled? [y/N] " fontcheck
 
 else
 
-fonterror=n
+fontcheck=y
 
 fi
 
-if [[ "$fonterror" = y ]];
+if [[ "$fontcheck" = n ]];
 then
 
 ZSH_THEME="robbyrussell"
