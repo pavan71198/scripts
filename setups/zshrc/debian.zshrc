@@ -15,7 +15,7 @@ plugins=(git zsh-syntax-highlighting zsh-completions)
 if [[ -z $DESKTOP_SESSION ]]; 
 then
 
-PROMPT_EOL_MARK=$'\n'
+PROMPT_EOL_MARK=$'\0'
 echo "No GUI detected."
 read -q "?Are you sure a Nerd Font is enabled? [y/N] " fontcheck
 
